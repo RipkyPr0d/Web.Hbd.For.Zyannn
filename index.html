@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Zyann!</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <!-- Canvas untuk Efek Partikel & Kembang Api -->
+        <canvas id="fx-canvas"></canvas>
+
+        <!-- SCENE 1: CLUE -->
+        <section id="scene-clue" class="scene active">
+            <div class="clue-box">
+                <p class="clue-label">Alowwwww</p>
+                <p class="clue-text">Click Bebas, Terus Masukin Pw Berupa Tanggal Lahir</p>
+            </div>
+        </section>
+
+        <!-- SCENE 2: PIN KEYPAD -->
+        <section id="scene-pin" class="scene">
+            <div class="pin-wrapper">
+                <h2 class="welcome-msg" id="welcome-msg">Nahh masaa hari lahirr gatauu🗿</h2>
+                <div class="pin-indicators">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="keypad">
+                    <button class="key" data-num="1">1</button>
+                    <button class="key" data-num="2">2</button>
+                    <button class="key" data-num="3">3</button>
+                    <button class="key" data-num="4">4</button>
+                    <button class="key" data-num="5">5</button>
+                    <button class="key" data-num="6">6</button>
+                    <button class="key" data-num="7">7</button>
+                    <button class="key" data-num="8">8</button>
+                    <button class="key" data-num="9">9</button>
+                    <button class="key" data-action="del">⌫</button>
+                    <button class="key" data-num="0">0</button>
+                    <button class="key" data-action="submit">✓</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 3: MYSTERY GAME (STAR HUNT) -->
+        <section id="scene-mystery" class="scene">
+            <div class="mystery-container">
+                <p class="mystery-hint" id="mystery-hint">Yang Menarik Yang Pasti Terpilih</p>
+                <div class="stars-field" id="stars-field"></div>
+            </div>
+        </section>
+
+        <!-- SCENE 4: CAKE & 2 CANDLES -->
+        <section id="scene-cake" class="scene">
+            <div class="cake-stage">
+                <div class="cake-assembly">
+                    <div class="cake-plate"></div>
+                    
+                    <!-- 1. LAYER PALING BAWAH -->
+                    <div class="cake-layer layer-bottom">
+                        <div class="cake-cream-drip"></div>
+                    </div>
+
+                    <!-- 2. LAYER TENGAH -->
+                    <div class="cake-layer layer-mid">
+                        <div class="cake-cream-drip-mid"></div>
+                    </div>
+                    
+                    <!-- 3. LAYER PALING ATAS + LILIN -->
+                    <div class="cake-layer layer-top">
+                        <div class="cake-top-frosting"></div>
+                        
+                        <!-- DUA LILIN DI ATAS LAYER -->
+                        <div class="candles-container">
+                            <div class="candle-item" data-index="0">
+                                <div class="flame" data-candle="0"></div>
+                                <div class="smoke"></div>
+                            </div>
+                            <div class="candle-item" data-index="1">
+                                <div class="flame" data-candle="1"></div>
+                                <div class="smoke"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="cake-instruction">Tap Aja lilinnyaa!</p>
+            </div>
+        </section>
+
+<!-- SCENE 5: FIREWORKS (Pure CSS Animation - Anti Lag) -->
+  <section id="scene-fireworks" class="scene">
+    <div class="fireworks-title-container" id="fw-title">
+        <h1 class="fw-main-title">Happy 17th Birthday Beautiful</h1>
+    </div>
+    <canvas id="fx-canvas"></canvas>
+</section>
+
+        <!-- SCENE 6: BOUQUET -->
+        <section id="scene-bouquet" class="scene">
+            <div class="bouquet-stage">
+                <div class="bouquet-img-wrapper">
+                    <img src="assets/images/bouquet.png" alt="Buket Bunga" class="bouquet-asset">
+                </div>
+                <div class="bouquet-card">
+                    <h3>Buket Virtualll</h3>
+                    <p>Virtual Ajaa duluuu🗿🗿</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 7: NOTEBOOK -->
+        <section id="scene-notebook" class="scene">
+            <div class="notebook-wrapper" id="notebook-trigger">
+                <div class="notebook-hint" id="notebook-hint">
+                    <p></p>
+                    <span class="tap-open-text"></span>
+                </div>
+                <div class="book" id="book">
+                    <!-- Cover Buku -->
+                    <div class="book-cover">
+                        <div class="cover-title">For Zyann</div>
+                    </div>
+                    <!-- Halaman Kiri -->
+                    <div class="book-page left-page"></div>
+                    <!-- Halaman Kanan -->
+                    <div class="book-page right-page">
+                        <div class="page-scroll-container">
+                            <div class="page-content" id="typed-content-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 8: FINAL ENDING -->
+        <section id="scene-ending" class="scene">
+            <div class="ending-text">
+                <p>Sekali lagii happy birtdayy yaa</p>
+                <p class="end-sig">— Rivki</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="bg-music" loop src="assets/audio/sempurna.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
